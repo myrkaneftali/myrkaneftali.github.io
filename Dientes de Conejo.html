@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Processing.JS dentro de página HTML </title>
+	</head>
+	<body>
+		<canvas id="MiLienzo"> </canvas>
+	</body>
+	<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script
+	>
+	<script>
+	var codigodeprograma = function(instanciaProcessing) {
+		with (instanciaProcessing) {
+			size(400,400);
+			frameRate(30);
+			var eyeSize = 30;
+
+			ellipse(150, 70, 60, 120);  // left ear
+			ellipse(240, 70, 60, 120);  // right ear
+
+			ellipse(200, 170, 150, 150);    // face
+
+			fill(0, 0, 0);
+			ellipse(170, 150, eyeSize, eyeSize);  // left eye
+			ellipse(230, 150, eyeSize, eyeSize);  // right eye
+
+			line(150, 200, 250, 200);   // mouth
+
+			noFill();
+			var lenght = 20;
+			rect(185, 200, 15, lenght); // left tooth
+			rect(200, 200, 15, lenght); // right tooth
+			
+		}};
+	var canvas = document.getElementById("MiLienzo");
+	var instanciaProcessing = new Processing(canvas, codigodeprograma);
+	</script>
+</html>
